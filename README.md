@@ -26,10 +26,12 @@ http://localhost:4173
 
 ## 部署方式
 
-项目已包含 GitHub Pages 工作流配置：
+推荐使用 GitHub Pages 的「从分支部署」方式（无需 GitHub Actions 工作流文件）：
 
-- 推送到 `main` 分支后自动触发部署
-- GitHub Actions 会将当前仓库内容发布到 GitHub Pages
+- 在仓库 Settings → Pages → Build and deployment 中选择 Deploy from a branch
+- Branch 选择 `main`，目录选择 `/ (root)`，保存后即可自动发布
+
+如果你希望使用 GitHub Actions 自动化工作流部署（例如后续接入构建步骤），需要将 `.github/workflows/deploy-pages.yml` 推送到仓库；该文件写入需要具备 workflow 权限的 GitHub 凭证。
 
 ## 项目结构
 
@@ -39,7 +41,7 @@ http://localhost:4173
 ├── styles.css
 ├── script.js
 ├── avatar-optimized.jpg
-└── .github/workflows/deploy-pages.yml
+└── avatar.jpg
 ```
 
 ## 说明
